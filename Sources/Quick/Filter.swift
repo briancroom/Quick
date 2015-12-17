@@ -11,7 +11,7 @@ public typealias FilterFlags = [String: Bool]
     A namespace for filter flag keys, defined primarily to make the
     keys available in Objective-C.
 */
-final public class Filter: NSObject {
+final public class Filter: Base {
     /**
         Example and example groups with [Focused: true] are included in test runs,
         excluding all other examples without this flag. Use this to only run one or

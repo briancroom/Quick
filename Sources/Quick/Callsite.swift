@@ -4,7 +4,7 @@ import Foundation
     An object encapsulating the file and line number at which
     a particular example is defined.
 */
-final public class Callsite: NSObject {
+final public class Callsite: Base {
     /**
         The absolute path of the file in which an example is defined.
     */

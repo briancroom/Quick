@@ -5,7 +5,7 @@ import Foundation
     including the index at which the example was executed, as
     well as the example itself.
 */
-final public class ExampleMetadata: NSObject {
+final public class ExampleMetadata: Base {
     /**
         The example for which this metadata was collected.
     */

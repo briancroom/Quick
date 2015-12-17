@@ -5,7 +5,7 @@ import Foundation
     the `describe` and `context` functions. Example groups can share
     setup and teardown code.
 */
-final public class ExampleGroup: NSObject {
+final public class ExampleGroup: Base {
     weak internal var parent: ExampleGroup?
     internal let hooks = ExampleHooks()
 

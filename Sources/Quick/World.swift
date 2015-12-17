@@ -23,7 +23,7 @@ public typealias SharedExampleClosure = (SharedExampleContext) -> ()
     You may configure how Quick behaves by calling the -[World configure:]
     method from within an overridden +[QuickConfiguration configure:] method.
 */
-final internal class World: NSObject {
+final internal class World: Base {
     /**
         The example group that is currently being run.
         The DSL requires that this group is correctly set in order to build a
@@ -130,7 +130,9 @@ final internal class World: NSObject {
         // 1. Grab all included examples.
         let included = includedExamples
         // 2. Grab the intersection of (a) examples for this spec, and (b) included examples.
-        let spec = rootExampleGroupForSpecClass(specClass).examples.filter { included.contains($0) }
+        let spec = rootExampleGroupForSpecClass(specClass).examples.filter { example in
+            return included.contains({ $0 === example }) 
+        }
         // 3. Remove all excluded examples.
         return spec.filter { example in
             !self.configuration.exclusionFilters.reduce(false) { $0 || $1(example: example) }
